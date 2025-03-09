@@ -366,15 +366,24 @@ footer hr {
   body {
     font-size: 16px; /* Smaller text size for better readability on smaller screens */
   }
+  .splash-screen {
+    text-align: center;
+  }
   .fixed-nav {
-    width: 25%;
+    width: 100%;
+    padding: 7px 0;
   }
 
+  #main-content {
+    width: 100%;
+  }
   /* Navigation */
   .fixed-nav ul {
     display: block;
     text-align: center;
     padding: 0;
+
+    width: 55%;
   }
 
   .fixed-nav ul li a {
@@ -382,13 +391,14 @@ footer hr {
   }
 
   .fixed-nav ul li {
-    display: block;
-    margin: 10px 0;
+    display: inline;
+    /* margin: 29px 0; */
+    padding: 5px;
   }
 
   .hero {
     font-size: 30px;
-    height: auto;
+    /* height: auto; */
     padding: 40px 20px;
   }
 
@@ -398,10 +408,13 @@ footer hr {
   }
 
   .services-container {
-    flex-direction: column;
-    align-items: center;
+    display: block;
+    width: 87%;
   }
 
+  .services {
+    width: 100%;
+  }
   .service-card {
     width: 100%;
     margin-bottom: 20px;
@@ -420,6 +433,10 @@ footer hr {
 
   footer .social-icons {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  footer .social-icons a {
+    font-size: 20px;
   }
 
   footer .col {
@@ -443,24 +460,43 @@ footer hr {
   /* Adjust font size */
   body {
     font-size: 14px;
+    width: 100%;
+  }
+
+  #main-content {
+    width: 100%;
+  }
+  .splash-screen {
+    text-align: center;
   }
 
   .fixed-nav {
-    width: 25%;
+    width: 100%;
+    display: ruby;
+    padding: 0;
+    display: block;
   }
 
   /* Navigation */
   .fixed-nav ul {
-    display: block;
+    display: flex;
     text-align: center;
     padding: 0;
+    flex-wrap: nowrap;
+    margin-left: 20px;
   }
 
   .fixed-nav ul li {
     font-size: 9px;
-    margin-top: 30px;
+    margin: 9px 9px;
   }
 
+  .hero {
+    font-size: 30px;
+
+    padding: 40px 20px;
+    margin: auto;
+  }
   .hero h1,
   .hero h2 {
     font-size: 24px; /* Smaller font size on very small devices */
@@ -491,5 +527,12 @@ footer hr {
   /* About Section */
   .about-title h2 {
     font-size: 2rem;
+  }
+
+  .about-me {
+    margin-top: 10px;
+  }
+  footer .social-icons a {
+    font-size: 20px;
   }
 }
