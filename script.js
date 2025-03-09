@@ -26,15 +26,14 @@ document.querySelectorAll("nav a").forEach((anchor) => {
 function animateProjectsSection() {
   const projectsSection = document.getElementById("projects");
 
-  // Create an intersection observer to monitor when the section comes into view
+  if (!projectsSection) return; // Safety check in case the element is missing
+
   const observer = new IntersectionObserver(
-    (entries, observer) => {
+    (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // Add the class 'show' when the section is in view
           projectsSection.classList.add("show");
         } else {
-          // Optionally, remove the 'show' class when the section is out of view, to re-trigger animation
           projectsSection.classList.remove("show");
         }
       });
@@ -42,7 +41,6 @@ function animateProjectsSection() {
     { threshold: 0.5 } // Trigger when 50% of the section is visible
   );
 
-  // Start observing the Projects Section
   observer.observe(projectsSection);
 }
 
@@ -54,19 +52,24 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     document.getElementById("splash-screen").classList.remove("show");
     document.body.classList.remove("no-scroll"); // Re-enable scrolling after splash screen
-    document.getElementById("main-content").classList.remove("hidden"); // Show the main content
-  }, 2000); // Hide splash screen after 2 seconds
+    document.getElementById("main-content").classList.remove("hidden"); // Show main content
 
-  // Start the observer for Projects Section
-  animateProjectsSection();
+    // Trigger animations and observers once content is revealed
+    animateOnScroll();
+    animateProjectsSection();
+  }, 2000); // Hide splash screen after 2 seconds
 });
 
-//For button
-const button = document.getElementById("Downloa-cv-button");
-button.addEventListener("click", DownloadCV);
+// For Download CV button
+const button = document.getElementById("Download-cv-button");
+if (button) {
+  button.addEventListener("click", DownloadCV);
+}
 
 function DownloadCV() {
-  // console.log("Button is cliked");
-  //here we will write the code for download cv
+  console.log("Download CV button clicked");
+  // Code for downloading CV will go here
 }
+
+// Trigger animations on scroll
 window.addEventListener("scroll", animateOnScroll);
