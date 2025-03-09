@@ -21,10 +21,10 @@ body {
   align-items: center;
   z-index: 1000;
   color: #d3d9d4;
-  font-size: 2.5rem;
+  font-size: 0.9rem;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 1s, visibility 1s;
+  transition: opacity 1.5s, visibility 1.5s;
 }
 
 .splash-screen.show {
@@ -42,7 +42,9 @@ body {
   text-align: center;
   z-index: 1000;
 }
-
+.fixed-nav :hover {
+  color: #212a31;
+}
 nav ul {
   list-style: none;
   padding: 0;
@@ -138,13 +140,13 @@ nav ul li a {
 .service-card {
   background: #124e66;
   color: #d3d9d4;
-  padding: 30px;
+  padding: 20px;
   width: 250px;
   border-radius: 10px;
   text-align: center;
   transition: transform 0.5s ease-in-out;
-  font-size: 1.3rem;
-  line-height: 1.8;
+  font-size: 1.1rem;
+  line-height: 1.7;
 }
 
 .service-card:hover {
@@ -178,22 +180,13 @@ nav ul li a {
 
 /* About Me Text */
 .about-text p {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: #d3d9d4;
-  max-width: 450px;
-  line-height: 1.8;
+  max-width: 1067px;
+  line-height: 1.9;
   background: rgba(255, 255, 255, 0.1);
   padding: 20px;
   border-radius: 10px;
-}
-
-/* Footer Section */
-footer {
-  background-color: #2e3944;
-  padding: 40px 20px;
-  text-align: center;
-  margin-top: 100px;
-  color: #d3d9d4;
 }
 
 footer p {
@@ -214,7 +207,7 @@ footer p {
 /* Footer Section */
 footer {
   background-color: #2e3944;
-  padding: 50px 20px;
+  padding: 10px 20px;
   text-align: center;
   color: #d3d9d4;
   margin-top: 50px;
@@ -233,10 +226,8 @@ footer .col {
 }
 
 footer h3 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: #d3d9d4;
-  margin-bottom: 10px;
-  text-align: left;
 }
 /* Projects Section */
 #projects {
@@ -305,15 +296,14 @@ footer h3 {
   background-color: #2e3944; /* Dark button on hover */
 }
 
-/* Removed horizontal line between Find Me In and Links */
-
 /* Links Section */
 footer #Hiden a {
   text-decoration: none;
   color: #d3d9d4;
-  font-size: 1.2rem;
-  display: block;
-  margin: 5px 0;
+  font-size: 1rem;
+  display: inline-flex;
+  margin: 11px 0;
+  width: fit-content;
 }
 
 footer #Hiden a:hover {
@@ -321,12 +311,6 @@ footer #Hiden a:hover {
 }
 
 /* Social Icons */
-footer .social-icons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 10px;
-}
 
 footer .social-icons a {
   font-size: 2rem;
@@ -341,7 +325,6 @@ footer .social-icons a:hover {
 
 /* Make social icons small and distributed in a square layout */
 footer .social-icons {
-  display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 icons in each row */
   gap: 20px;
   justify-items: center;
@@ -349,8 +332,10 @@ footer .social-icons {
 }
 
 footer .social-icons a {
-  font-size: 1.5rem; /* Make icons smaller */
+  font-size: 1.7rem;
   transition: transform 0.3s ease, color 0.3s ease;
+  margin: 15px;
+  text-decoration: none;
 }
 
 footer .social-icons a:hover {
@@ -365,7 +350,7 @@ html {
 
 /* Copy Right Section */
 footer .CopyRight {
-  font-size: 1.1rem;
+  font-size: 0.8rem;
   color: #d3d9d4;
   margin-top: 20px;
 }
@@ -374,4 +359,137 @@ footer hr {
   border: 0;
   border-top: 1px solid #748d92;
   margin: 20px 0;
+}
+
+/* General Styles for smaller devices (Mobile) */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px; /* Smaller text size for better readability on smaller screens */
+  }
+  .fixed-nav {
+    width: 25%;
+  }
+
+  /* Navigation */
+  .fixed-nav ul {
+    display: block;
+    text-align: center;
+    padding: 0;
+  }
+
+  .fixed-nav ul li a {
+    font-size: 10px;
+  }
+
+  .fixed-nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .hero {
+    font-size: 30px;
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .services-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  #project .project {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 0px;
+  }
+
+  .footer .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  footer .social-icons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  footer .col {
+    min-width: 100%;
+  }
+
+  /* Make call-to-action button smaller for mobile */
+  .cta-button {
+    padding: 12px 20px;
+    font-size: 18px;
+  }
+
+  /* About Me Section */
+  .about-text p {
+    font-size: 1rem;
+  }
+}
+
+/* Extra small devices (Portrait Phones) */
+@media (max-width: 480px) {
+  /* Adjust font size */
+  body {
+    font-size: 14px;
+  }
+
+  .fixed-nav {
+    width: 25%;
+  }
+
+  /* Navigation */
+  .fixed-nav ul {
+    display: block;
+    text-align: center;
+    padding: 0;
+  }
+
+  .fixed-nav ul li {
+    font-size: 9px;
+    margin-top: 30px;
+  }
+
+  .hero h1,
+  .hero h2 {
+    font-size: 24px; /* Smaller font size on very small devices */
+  }
+
+  .cta-button {
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+
+  .project h3 {
+    font-size: 1.5rem; /* Smaller project title */
+  }
+
+  .project p {
+    font-size: 1rem; /* Adjust project description for smaller screens */
+  }
+
+  .services-container {
+    display: block;
+  }
+
+  .service-card {
+    width: 87%;
+    margin-bottom: 20px;
+  }
+
+  /* About Section */
+  .about-title h2 {
+    font-size: 2rem;
+  }
 }

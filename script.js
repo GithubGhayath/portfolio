@@ -61,4 +61,12 @@ document.addEventListener("DOMContentLoaded", () => {
   animateProjectsSection();
 });
 
+//For button
+const button = document.getElementById("Downloa-cv-button");
+button.addEventListener("click", DownloadCV);
+
+function DownloadCV() {
+  // console.log("Button is cliked");
+  //here we will write the code for download cv
+}
 window.addEventListener("scroll", animateOnScroll);
